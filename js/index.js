@@ -1,10 +1,10 @@
 // Your code goes here
 
 //mouseover
-const navItemOne = document.querySelector('.nav-link:first-child')
+const navItemOne = document.querySelector('.nav-link:first-child');
 
-navItemOne.addEventListener('mouseover', (event) => {
-  navItemOne.style.color = "pink";
+navItemOne.addEventListener('mouseover', (e) => {
+    navItemOne.style.color = "pink";
 })
 
 
@@ -57,7 +57,7 @@ p.forEach(el => {
 })
 
 
-  //prevent default
+//   prevent default
   const stopLink = document.querySelector('.nav-link');
     stopLink.addEventListener('click', (event) => {
     event.preventDefault();
@@ -94,4 +94,31 @@ p.forEach(el => {
       ele.addEventListener('click', (e) => {
           ele.style.backgroundColor = "pink";
       })
+  })
+
+  //green sock animations
+  const images = document.querySelectorAll('img');
+  
+  images.forEach(ele => {
+    ele.addEventListener("click", (e) => {
+        gsap.to('img', {
+             duration: 1,
+             rotateY: 180,
+             ease: "elastic(1, 0.75)",
+             yoyo: true,
+             repeat: 1
+            })
+        })
+  })
+ 
+  images.forEach(ele => {
+    ele.addEventListener("mouseleave", (e) => {
+        gsap.to('img', {
+             duration: 1,
+             rotateY: 360,
+             ease: "elastic(1, 0.75)",
+             yoyo: true,
+             repeat: 1
+            })
+        })
   })
