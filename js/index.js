@@ -56,33 +56,42 @@ p.forEach(el => {
     })
 })
 
-// //wheel
-// function zoom(event) {
-//     event.preventDefault();
-  
-//     scale += event.deltaY * -0.01;
-  
-//     // Restrict scale
-//     scale = Math.min(Math.max(.125, scale), 4);
-  
-//     // Apply scale transform
-//     paragraph.style.transform = `scale(${scale})`;
-//   }
-  
-//   let scale = 1;
-//   const paragraph = document.querySelectorAll('p');
-//   paragraph.onwheel = zoom;
-
-//   paragraph.addEventListener('wheel', (zoom));
-
 
   //prevent default
   const stopLink = document.querySelector('.nav-link');
     stopLink.addEventListener('click', (event) => {
     event.preventDefault();
-    console.log("stopped the link")
+    alert("prevented default / stopped the link");
   })
 
 
+  //touchend
+  const header = document.querySelector('h1')
 
+  header.addEventListener('touchend', (event) => {
+    header.style.fontSize = "8rem";
+  })
+  console.log(header);
+  
+  //touchstart
+  header.addEventListener('touchstart', (event) => {
+    header.style.color = "dodgerblue";
+  });
 
+  //click
+  const button = document.querySelectorAll('.btn');
+
+  button.forEach(ele => {
+      ele.addEventListener('click', (e) => {
+          ele.style.backgroundColor = "papayawhip";
+          e.stopPropagation();
+      })
+  })
+
+  const destination = document.querySelectorAll('.destination');
+
+  destination.forEach(ele => {
+      ele.addEventListener('click', (e) => {
+          ele.style.backgroundColor = "pink";
+      })
+  })
