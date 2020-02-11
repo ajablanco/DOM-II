@@ -25,13 +25,12 @@ window.addEventListener('scroll', (e) => {
 })
 
 //double click
-const img = document.querySelectorAll('img');
+const nav2 = document.querySelector('.nav-link:nth-child(2)');
 
-img.forEach(el => {
-    el.addEventListener('dblclick', (e) => {
-        el.style.transform = "scale(1.1)";
+nav2.addEventListener('dblclick', (e) => {
+        nav2.style.color = "blue";
     })
-})
+
 
 //resize
 const h1 = document.querySelector('h1');
